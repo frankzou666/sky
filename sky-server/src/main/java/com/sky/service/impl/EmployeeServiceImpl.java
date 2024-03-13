@@ -105,4 +105,60 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     }
 
+    @Override
+    @Transactional
+    public Boolean lockEmployee(Integer status, Long id) {
+        //查询当前用户
+        Employee employeeObj = employeeMapper.getById(id);
+
+        if (employeeObj==null){
+            throw  new AccountLockedException("不存在用户ID: "+id);
+        }
+
+        //更改状态
+        Long empId = BaseContext.getCurrentId();
+        employeeObj.setStatus(status);
+        employeeObj.setUpdateTime(LocalDateTime.now());
+        employeeObj.setUpdateUser(empId);
+
+        //保存到数据库中
+        try{
+            employeeMapper.updateEmployee(employeeObj);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+
+        return  true;
+    }
+
+    @Override
+    public Employee findEmployeebyId(Long id) {
+        Employee employee = employeeMapper.getById(id);
+
+
+
+        if (employee==null){
+            throw  new AccountLockedException("不存在用户ID: "+id);
+        }
+        return employee;
+    }
+
+    @Override
+    @Transactional
+    public Boolean updateEmployee(Employee employee) {
+        //更改状态
+        Long empId = BaseContext.getCurrentId();
+        employee.setUpdateTime(LocalDateTime.now());
+        employee.setUpdateUser(empId);
+        try{
+            employeeMapper.updateEmployee(employee);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+
+        return  true;
+    }
+
 }

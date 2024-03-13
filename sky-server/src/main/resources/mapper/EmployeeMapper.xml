@@ -14,4 +14,20 @@
         </where>
         order by create_time desc
     </select>
+
+    <update id="updateEmployee">
+         update employee
+           <set>
+               <if test="name!=null  or name!=''" > name=#{name}, </if>
+               <if test="username!=null  or username!=''" > username=#{username}, </if>
+               <if test="password!=null  or password!=''" > password=#{password}, </if>
+               <if test="phone!=null  or phone!=''" > phone=#{phone}, </if>
+               <if test="sex!=null  or sex!=''" > sex=#{sex}, </if>
+               <if test="idNumber!=null  or idNumber!=''" > id_number=#{idNumber}, </if>
+               <if test="status!=null  or status!=''" > status=#{status}, </if>
+               <if test="updateTime!=null  or updateTime!=''" > update_time=#{updateTime}, </if>
+               <if test="updateUser!=null  or updateUser!=''" > update_user=#{updateUser}, </if>
+           </set>
+         where id = #{id}
+    </update>
 </mapper>

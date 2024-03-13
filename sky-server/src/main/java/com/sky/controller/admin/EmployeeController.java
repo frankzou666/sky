@@ -85,12 +85,47 @@ public class EmployeeController {
 
     }
 
+    @PutMapping()
+    @ApiOperation(value = "员工修改")
+    public Result  updateEmployee(@RequestBody Employee employee){
+        log.info("修改员工,{}",employee);
+        Boolean result = employeeService.updateEmployee(employee);
+        //修改失败
+        if (!result) {
+            return Result.error("修改员工失败: " + employee.getId().toString());
+        }
+        return  Result.success();
+
+    }
+
     @GetMapping("/page")
     @ApiOperation(value = "员工分页查询")
     public Result<PageResult>  getEmployee(EmployeePageQueryDTO employeePageQueryDTO){
         log.info("员工查询页,{}",employeePageQueryDTO);
         PageResult pageResult = employeeService.findEmployee(employeePageQueryDTO);
         return Result.success(pageResult);
+
+    }
+
+    @GetMapping("/{id}")
+    @ApiOperation(value = "根据id员工查询")
+    public Result<Employee> getEmployeeById(@PathVariable("id") Long id){
+        log.info("根据id员工查询,{}",id);
+        Employee employee = employeeService.findEmployeebyId(id);
+        employee.setPassword("*****************");
+        return Result.success(employee);
+
+    }
+
+    @PostMapping("/status/{status}")
+    @ApiOperation(value = "员工启用禁用")
+    public Result  lockEmployee(@PathVariable("status") Integer status,@RequestParam  Long id){
+        log.info("员工启用禁用,{}",status);
+        Boolean result =  employeeService.lockEmployee(status,id);
+        if (!result) {
+            return Result.error("启用或禁用失败,ID:{}"+id);
+        }
+        return Result.success();
 
     }
 
