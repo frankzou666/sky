@@ -85,8 +85,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         //
         Long empId = BaseContext.getCurrentId();
-        employee.setCreateUser(empId);
-        employee.setUpdateUser(empId);
+        //employee.setCreateUser(empId);
+        //employee.setUpdateUser(empId);
         employeeMapper.insert(employee);
 
     }
@@ -118,8 +118,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         //更改状态
         Long empId = BaseContext.getCurrentId();
         employeeObj.setStatus(status);
-        employeeObj.setUpdateTime(LocalDateTime.now());
-        employeeObj.setUpdateUser(empId);
 
         //保存到数据库中
         try{
@@ -149,8 +147,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Boolean updateEmployee(Employee employee) {
         //更改状态
         Long empId = BaseContext.getCurrentId();
-        employee.setUpdateTime(LocalDateTime.now());
-        employee.setUpdateUser(empId);
+//        employee.setUpdateTime(LocalDateTime.now());
+//        employee.setUpdateUser(empId);
         try{
             employeeMapper.updateEmployee(employee);
         } catch (Exception ex) {
