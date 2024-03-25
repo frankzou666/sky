@@ -9,3 +9,12 @@ sky:
     database: sky
     username: app
     password: app123456
+
+
+minio:
+  endpoint: http://192.168.1.146:9000
+  accessKey: minioadmin
+  secretKey: minioadmin
+  bucket:
+    files: mediafiles
+    videofiles: video

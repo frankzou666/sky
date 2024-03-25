@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sky.mapper.DishMapper">
+    <resultMap id="DishVOMap" type="com.sky.vo.DishVO">
+        <result column="id" property="id"></result>
+        <result column="name" property="name"></result>
+        <result column="category_id" property="categoryId"></result>
+        <result column="price" property="price"></result>
+        <result column="image" property="image"></result>
+        <result column="description" property="description"></result>
+        <result column="status" property="status"></result> 
+        <result column="update_time" property="updateTime"></result>
+        <result column="categoryname" property="categoryName"></result>
+        <collection property="flavors" javaType="list" ofType="com.sky.entity.DishFlavor">
+            <result column="dishflavor_name" property="name"></result>
+            <result column="dishflavor_id" property="id"></result>
+            <result column="dishflavor_dishid" property="dishId"></result>
+            <result column="dishflavor_value" property="value"></result>
+        </collection>
+        
+
+
+    </resultMap>
+
+   <insert id="save" useGeneratedKeys="true" keyProperty="id">
+       insert into dish(name,category_id,price,image,description,status)
+       values
+       (#{name},#{categoryId},#{price},#{image},#{description},1)
+
+   </insert>
+
+
+    <select id="findDishByName" resultMap="DishVOMap">
+        select a.id,a.name,a.category_id,a.price,a.image,
+               a.description,a.status,a.update_time,b.name as categoryname,
+               c.name as dishflavor_name,c.id as dishflavor_id,
+               c.dish_id as dishflavor_dishid,c.value as dishflavor_value
+        from dish a join category b on a.category_id=b.id left join dish_flavor c on a.id=c.dish_id
+        <where>
+            <if test="name!=null">
+                a.name like '%${name}%'
+            </if>
+            <if test="categoryId!=null">
+                a.category_id=#{categoryId}
+            </if>
+            <if test="status!=null">
+                a.status=#{status}
+            </if>
+        </where>
+        order by a.update_time desc
+
+
+    </select>
+
+
+    <select id="findDishById" resultMap="DishVOMap">
+        select a.id,a.name,a.category_id,a.price,a.image,
+        a.description,a.status,a.update_time,b.name as categoryname,
+        c.name as dishflavor_name,c.id as dishflavor_id,
+        c.dish_id as dishflavor_dishid,c.value as dishflavor_value
+        from dish a join category b on a.category_id=b.id left join dish_flavor c on a.id=c.dish_id
+        where a.id = #{id}
+
+    </select>
+
+    <delete id="deleteDishById">
+        delete from dish where id = #{id}
+
+    </delete>
+
+    <delete id="deleteDishByIds"  parameterType="java.util.List">
+        delete from dish where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+
+    </delete>
+
+    <update id="updateDishById">
+        update dish
+        set name = #{name},
+        category_id =#{categoryId},
+        category_id =#{categoryId},
+        price =#{price},
+        image =#{image},
+        description =#{description},
+        status =#{status},
+        update_time = #{updateTime},
+        update_user =#{updateUser}
+        where id=#{id}
+
+    </update>
+
+    <update id="updateDishStatusById">
+        update dish
+        set status = ${status}
+        where id=#{id}
+    </update>
+
+
+</mapper>
