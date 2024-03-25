@@ -4,6 +4,19 @@ server:
 spring:
   profiles:
     active: dev
+
+  redis:
+    database: 0
+    host: 192.168.1.146
+    port: 6379
+    password: 6379
+    jedis:
+      pool:
+        min-idle: 0
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+    connect-timeout: 30000ms
   main:
     allow-circular-references: true
   datasource:
@@ -37,3 +50,12 @@ sky:
     admin-ttl: 7200000
     # 设置前端传递过来的令牌名称
     admin-token-name: token
+
+
+minio:
+  endpoint: http://192.168.1.146:9000
+  accessKey: minioadmin
+  secretKey: minioadmin
+  bucket:
+    files: mediafiles
+    videofiles: video

@@ -1,5 +1,6 @@
 package com.sky.controller.admin;
 
+import com.alibaba.fastjson.JSON;
 import com.sky.constant.JwtClaimsConstant;
 import com.sky.dto.EmployeeDTO;
 import com.sky.dto.EmployeeLoginDTO;
@@ -15,6 +16,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -33,6 +35,9 @@ public class EmployeeController {
     private EmployeeService employeeService;
     @Autowired
     private JwtProperties jwtProperties;
+
+    @Autowired
+    RedisTemplate redisTemplateForEmployee;
 
     /**
      * 登录
@@ -113,6 +118,26 @@ public class EmployeeController {
         log.info("根据id员工查询,{}",id);
         Employee employee = employeeService.findEmployeebyId(id);
         employee.setPassword("*****************");
+        return Result.success(employee);
+
+    }
+
+    @PostMapping("/redis/{id}")
+    @ApiOperation(value = "员工存放到redis")
+    public Result  toRedistoEmployee(@PathVariable("id") Long id){
+        Employee employee =  employeeService.findEmployeebyId(id);
+        String jsonString = JSON.toJSONString(employee);
+        redisTemplateForEmployee.opsForHash().put("maps",id.toString(),jsonString);
+        return Result.success();
+
+    }
+
+    @GetMapping("/redis/{id}")
+    @ApiOperation(value = "员工存放到redis")
+    public Result  getRedistoEmployee(@PathVariable("id") Long id){
+
+        String jsonString = (String)redisTemplateForEmployee.opsForValue().get(id.toString());
+        Employee employee = (Employee)JSON.parseObject(jsonString,Employee.class);
         return Result.success(employee);
 
     }
