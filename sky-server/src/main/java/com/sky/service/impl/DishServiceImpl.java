@@ -143,4 +143,9 @@ public class DishServiceImpl implements DishService {
         }
     }
 
+    @Override
+    public List<DishVO> findDishByCategoryId(Long categoryId) {
+        return null;
+    }
+
 }

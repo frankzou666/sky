@@ -21,4 +21,6 @@ public interface DishService {
     public  Boolean updateDish (DishDTO dishDTO);
 
     public Boolean updateDishStatusById(Long id,Integer status);
+
+    public List<DishVO> findDishByCategoryId(Long categoryId);
 }

@@ -5,24 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b4f1140-4712-41cc-b0a2-64af98a6bffe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/controller/admin/CategoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/mapper/CategoryMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/mapper/DishMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/mapper/SetmealMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/CategoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/impl/CategoryServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sky-server/src/main/resources/mapper/CategoryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/controller/user/SetmealController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/controller/user/ShopCartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/controller/user/UserDishController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/mapper/ShoppingCartMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/SetmealService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/ShoppingCartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/impl/SetmealServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/impl/ShoppingCartServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sky-server/src/main/resources/mapper/Setmeal.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sky-server/src/main/resources/mapper/ShoppingCartMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sky-server/src/test/java/com/sky/HttpClientTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/controller/admin/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/controller/admin/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/mapper/EmployeeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/mapper/EmployeeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/impl/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/impl/EmployeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sky-server/src/main/resources/mapper/EmployeeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/src/main/resources/mapper/EmployeeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sky-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/SkyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/SkyApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/mapper/DishMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/mapper/DishMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/mapper/SetmealDishMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/mapper/SetmealDishMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/mapper/SetmealMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/mapper/SetmealMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/DishService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/DishService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/impl/DishServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/impl/DishServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sky-server/src/test/java/com/sky/UploadMinioFileServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/src/test/java/com/sky/UploadMinioFileServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -33,7 +50,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2dPOy4tZRGFxdrnQ9lQQ21NRidi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -46,9 +63,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "/Users/oliver/Documents/frank/dev/java/sky/sky-server/src/main/java/com/sky/mapper",
+    "last_opened_file_path": "/Users/oliver/Documents/frank/dev/java/sky/sky-server/src/main/resources/mapper",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2473573",
@@ -57,14 +74,17 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sky-server/src/main/resources/mapper" />
       <recent name="$PROJECT_DIR$/sky-server/src/main/java/com/sky/mapper" />
       <recent name="$PROJECT_DIR$/sky-server/src/main/java/com/sky/controller/admin" />
       <recent name="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/impl" />
       <recent name="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service" />
-      <recent name="$PROJECT_DIR$/sky-server/src/main/resources/mapper" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.sky.controller.user" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.SkyApplication">
     <configuration name="SkyApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.sky.SkyApplication" />
       <module name="sky-server" />
@@ -78,9 +98,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HttpClientTest.testHttpCliengGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sky-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sky.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sky" />
+      <option name="MAIN_CLASS_NAME" value="com.sky.HttpClientTest" />
+      <option name="METHOD_NAME" value="testHttpCliengGet" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpClientTest.testHttpCliengPost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sky-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sky.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sky" />
+      <option name="MAIN_CLASS_NAME" value="com.sky.HttpClientTest" />
+      <option name="METHOD_NAME" value="testHttpCliengPost" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.SkyApplication" />
+        <item itemvalue="JUnit.HttpClientTest.testHttpCliengPost" />
+        <item itemvalue="JUnit.HttpClientTest.testHttpCliengGet" />
       </list>
     </recent_temporary>
   </component>
@@ -142,11 +196,33 @@
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/impl/EmployeeServiceImpl.java</url>
-          <line>111</line>
-          <option name="timeStamp" value="18" />
+          <url>file://$PROJECT_DIR$/sky-server/src/test/java/com/sky/HttpClientTest.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/sky-server/src/test/java/com/sky/HttpClientTest.java</url>
+          <line>24</line>
+          <properties class="com.sky.HttpClientTest" method="testHttpCliengGet">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/sky-server/src/test/java/com/sky/HttpClientTest.java</url>
+          <line>49</line>
+          <properties class="com.sky.HttpClientTest" method="testHttpCliengPost">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

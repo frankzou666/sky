@@ -30,6 +30,10 @@ public interface DishMapper {
 
     DishVO findDishById(Long id);
 
+
+    @Select("select * from dish where id = #{id}")
+    Dish getDishById(Long id);
+
     void deleteDishById(Long id);
 
     void deleteDishByIds(List<Long> ids);
