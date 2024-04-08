@@ -16,6 +16,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -36,8 +37,8 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     @Override
     @ApiOperation("增加购物车项目")
+    @Transactional
     public void addShopCartItem(ShoppingCartDTO shoppingCartDTO) {
-
         ShoppingCart shoppingCart = new ShoppingCart();
         BeanUtils.copyProperties(shoppingCartDTO,shoppingCart);
 
@@ -63,7 +64,6 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
                 shoppingCart.setImage(dish.getImage());
                 shoppingCart.setAmount(dish.getPrice());
             } else {
-
                 Setmeal setmeal = setmealMapper.findSetmealBy(setmealId);
                 shoppingCart.setName(setmeal.getName());
                 shoppingCart.setImage(setmeal.getImage());
@@ -76,6 +76,22 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         }
 
 
+
+    }
+
+    @Override
+    @Transactional
+    public List<ShoppingCart> findShopCartItem(Long userId) {
+        ShoppingCart shoppingCart = new ShoppingCart();
+        shoppingCart.setUserId(userId);
+        List<ShoppingCart> shoppingCartList= shoppingCartMapper.findShoppingCartByUserId(shoppingCart);
+        return shoppingCartList;
+    }
+
+    @Override
+    @Transactional
+    public void deleteShopCartItemByUserId(Long userId) {
+        shoppingCartMapper.deleteShopCartItemByUserId(userId);
 
     }
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sky.mapper.OrdersMapper">
+
+
+    <resultMap id="DishVOMap" type="com.sky.vo.DishVO">
+        <result column="id" property="id"></result>
+        <result column="name" property="name"></result>
+        <result column="category_id" property="categoryId"></result>
+        <result column="price" property="price"></result>
+        <result column="image" property="image"></result>
+        <result column="description" property="description"></result>
+        <result column="status" property="status"></result> 
+        <result column="update_time" property="updateTime"></result>
+        <result column="categoryname" property="categoryName"></result>
+        <collection property="flavors" javaType="list" ofType="com.sky.entity.DishFlavor">
+            <result column="dishflavor_name" property="name"></result>
+            <result column="dishflavor_id" property="id"></result>
+            <result column="dishflavor_dishid" property="dishId"></result>
+            <result column="dishflavor_value" property="value"></result>
+        </collection>
+        
+
+
+    </resultMap>
+
+   <insert id="save" useGeneratedKeys="true" keyProperty="id">
+       insert into Orders
+       (number,status,user_id,address_book_id,order_time,
+       checkout_time,pay_method,pay_status,amount,remark,
+       user_name,phone,address,consignee,cancel_reason,
+       rejection_reason,cancel_time,estimated_delivery_time,delivery_status,delivery_time,
+       pack_amount,tableware_number,tableware_status)
+       values
+       (#{number},#{status},#{userId},#{addressBookId},#{orderTime},
+       #{checkoutTime},#{payMethod},#{payStatus},#{amount},#{remark},
+       #{userName},#{phone},#{address},#{consignee},#{cancelReason},
+       #{rejectionReason},#{cancelTime},#{estimatedDeliveryTime},#{deliveryStatus},#{deliveryTime},
+       #{packAmount},#{tablewareNumber},#{tablewareStatus})
+
+   </insert>
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

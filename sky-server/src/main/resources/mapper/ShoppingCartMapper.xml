@@ -38,6 +38,10 @@
 
     </insert>
 
+    <delete id="deleteShopCartItemByUserId">
+        delete from shopping_cart
+        where user_id= #{userId}
+    </delete>
 
 
 </mapper>
