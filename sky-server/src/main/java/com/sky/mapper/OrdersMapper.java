@@ -2,6 +2,10 @@ package com.sky.mapper;
 
 import com.sky.entity.Orders;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Mapper
 public interface OrdersMapper {
@@ -13,6 +17,10 @@ public interface OrdersMapper {
 
 
     void save(Orders orders);
+
+    List<Orders> findOrdersByStatusAndOrderTime(@Param("status") Integer status, @Param("orderTime")LocalDateTime orderTime);
+
+    void update(Orders orders);
 
 
 
