@@ -32,6 +32,7 @@
         <spring-boot.version>2.7.14</spring-boot.version>
         <minioversion>8.4.3</minioversion>
         <springCacheVersion>2.7.14</springCacheVersion>
+        <springWebSocketVersion>2.7.14</springWebSocketVersion>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -156,6 +157,15 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-cache</artifactId>
                 <version>${springCacheVersion}</version>
+            </dependency>
+
+
+            <!--  spring websocket         -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-websocket</artifactId>
+                <version>${springWebSocketVersion}</version>
+
             </dependency>
         </dependencies>
     </dependencyManagement>

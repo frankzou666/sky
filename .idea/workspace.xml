@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b4f1140-4712-41cc-b0a2-64af98a6bffe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/task/MyTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/task/OrderTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/config/WebSocketConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/controller/admin/ReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/ReportService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/impl/ReportServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/websocket/WebSocketServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/SkyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/SkyApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/controller/user/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/controller/user/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/mapper/OrdersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/mapper/OrdersMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/task/MyTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/src/main/java/com/sky/task/MyTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sky-server/src/main/resources/mapper/OrdersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sky-server/src/main/resources/mapper/OrdersMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,20 +47,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "dev",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "/Users/oliver/Documents/frank/dev/java/sky/sky-server/src/main/resources/mapper",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2473573",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/oliver/Documents/frank/dev/java/sky/sky-server/src/main/resources/mapper&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2473573&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/sky-server/src/main/resources/mapper" />
@@ -160,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712559940019</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="04.13增加spring task,对超时订单进行自动取消">
+      <option name="closed" value="true" />
+      <created>1713087782537</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713087782537</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -178,7 +187,8 @@
     <MESSAGE value="0308，初始化" />
     <MESSAGE value="0313,员工分页查询代码" />
     <MESSAGE value="04.08添加购物车" />
-    <option name="LAST_COMMIT_MESSAGE" value="04.08添加购物车" />
+    <MESSAGE value="04.13增加spring task,对超时订单进行自动取消" />
+    <option name="LAST_COMMIT_MESSAGE" value="04.13增加spring task,对超时订单进行自动取消" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

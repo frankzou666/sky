@@ -4,6 +4,7 @@ import com.sky.entity.Orders;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -21,6 +22,9 @@ public interface OrdersMapper {
     List<Orders> findOrdersByStatusAndOrderTime(@Param("status") Integer status, @Param("orderTime")LocalDateTime orderTime);
 
     void update(Orders orders);
+
+
+    double sumByDateAndStatus(@Param("startDate") LocalDate startDate,@Param("status") int status);
 
 
 

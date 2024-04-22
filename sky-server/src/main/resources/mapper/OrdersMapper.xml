@@ -59,6 +59,22 @@
     </update>
 
 
+    <select id="sumByDateAndStatus" resultType="double">
+        select ifnull(sum(amount),0)
+        from orders
+        <where>
+            <if test="startDate!=null">
+                and order_time &gt;= #{startDate}
+               and order_time &lt; #{startDate} + interval '1' day
+            </if>
+            <if test="status!=null">
+                and status = #{status}
+            </if>
+        </where>
+
+    </select>
+
+
 
 
 
