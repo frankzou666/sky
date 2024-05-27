@@ -5,6 +5,8 @@ import com.sky.dto.OrdersSubmitDTO;
 import com.sky.vo.OrderPaymentVO;
 import com.sky.vo.OrderSubmitVO;
 
+import java.util.Map;
+
 public interface OrderService {
 
     public OrderSubmitVO submitOrder(OrdersSubmitDTO ordersSubmitDTO);
@@ -12,5 +14,6 @@ public interface OrderService {
     public OrderPaymentVO payment(OrdersPaymentDTO ordersPaymentDTO) throws Exception;
 
     void paySuccess(String outTradeNo);
+
 
 }

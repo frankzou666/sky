@@ -10,6 +10,7 @@ import com.sky.vo.DishVO;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface DishMapper {
@@ -42,5 +43,9 @@ public interface DishMapper {
     void updateDishById(Dish dish);
 
     void updateDishStatusById(@Param("id") Long id, @Param("status") Integer status);
+
+    Integer countByMap(Map map);
+
+
 
 }

@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface OrdersMapper {
@@ -25,6 +26,10 @@ public interface OrdersMapper {
 
 
     double sumByDateAndStatus(@Param("startDate") LocalDate startDate,@Param("status") int status);
+
+    Integer countByMap(Map map);
+
+    Double sumByMap(Map map);
 
 
 

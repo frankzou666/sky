@@ -74,6 +74,23 @@
 
     </select>
 
+    <select id="countByMap" resultType="Integer">
+        select count(*)
+        from orders
+
+
+    </select>
+
+    <select id="sumByMap" resultType="Double">
+        select count(*)
+        from orders
+
+
+    </select>
+
+
+
+
 
 
 
